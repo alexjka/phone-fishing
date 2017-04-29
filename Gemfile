@@ -15,7 +15,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'launchy', require: false
+  gem 'launchy', require: true
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
