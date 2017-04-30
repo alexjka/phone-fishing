@@ -9,11 +9,26 @@
   </head>
 
   <body>
-  <nav>
-    <ul>
-      <li><%= link_to 'Sign Up', 'new_user_registration' %></li>
-    </ul>
-  </nav>
+    <div class="top-bar-right">
+      <ul class="menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "My Profile", user_path(current_user) %> </li>
+            <% if current_user.is_admin? %>
+              <li><%= link_to "Admin", users_path %></li>
+            <% end %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          <% end %>
+          <li>
+            <%= form_tag(releases_path, method: :get) do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Artists" %>
+              <%= submit_tag 'Search', name: nil %>
+            <% end %>
+          </li>
+      </ul>
+    </div>
 
     <%= yield %>
   </body>
