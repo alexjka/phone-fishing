@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "user signs in" , %Q{
   As an unauthenticated user
   I want to sign up
-  So that I can see how fishing spots are producing
+  So that I can see what fishing spots are producing
 } do
   # ACCEPTANCE CRITERIA
   # When I visit the page I want to a link that allows me to sign in
@@ -35,29 +35,4 @@ end
 scenario "password confirmation does not match confirmation" do
 
 end
-  scenario "clicks sign up and fills in the fields and signs in" do
-    User.create(username: "Johnboy91", email: "Highflyer87@gmail.com", password: "most_generic_pword")
-    visit root_path
-
-    click_link "Sign In"
-    fill_in "Email", with: 'Highflyer87@gmail.com'
-    fill_in "Password", with: 'most_generic_pword'
-    click_button "Log in"
-
-    expect(page).to have_content 'Sign Out'
-    expect(page).to_not have_content 'Sign In'
-  end
-
-  scenario "clicks sign in but fills in invalid information" do
-    visit root_path
-
-    click_link "Sign In"
-    fill_in "Email", with: "bademail@false.com"
-    fill_in "Password", with: "badpassword"
-    click_button "Log in"
-
-    expect(page).to have_content 'Invalid Email or password'
-    expect(page).to have_content 'Sign In'
-    expect(page).to_not have_content 'Sign Out'
-  end
 end
