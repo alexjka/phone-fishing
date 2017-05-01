@@ -21,12 +21,6 @@
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
-          <li>
-            <%= form_tag(releases_path, method: :get) do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Artists" %>
-              <%= submit_tag 'Search', name: nil %>
-            <% end %>
-          </li>
       </ul>
     </div>
 

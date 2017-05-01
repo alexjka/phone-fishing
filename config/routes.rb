@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :destroy]
 
-  root ""
+  root 'spots#index'
 end
