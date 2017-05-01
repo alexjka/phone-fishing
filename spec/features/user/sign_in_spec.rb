@@ -15,6 +15,8 @@ feature "user signs in" , %Q{
 scenario "specifiying valid and required information" do
   visit root_path
   click_link "Sign Up"
+  fill_in "First Name", with: 'Joe'
+  fill_in "Last Name", with: 'Smith'
   fill_in "Email", with: 'user@example.com'
   fill_in "Cell Number", with: "5085544233"
   fill_in "Password", with: 'password'
