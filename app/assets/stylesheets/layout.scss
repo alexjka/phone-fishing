@@ -1,0 +1,17 @@
+@import "settings";
+
+.flash {
+  background-color: $primary-color;
+  color: $white;
+  font-size: 20px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.top-bar {
+  color: $secondary-color;
+}
+
+.body-background {
+  background-image: url('/assets/wave_red_lines_light_20065_1920x1080.jpg');
+}
