@@ -13,6 +13,9 @@
   </head>
 
   <body class="body-background">
+    <div class="top-bar-left">
+      <ul class="menu-text"><%= link_to "Phone Fishing", root_path %></ul>
+    </div>
     <div class="top-bar-right">
       <ul class="menu">
           <% if user_signed_in? %>
@@ -26,7 +29,7 @@
     </div>
 
     <%= yield %>
-    
+
     <div id="app">
     </div>
   </body>
