@@ -18,9 +18,9 @@ scenario "specifiying valid and required information" do
   fill_in "First name", with: 'Joe'
   fill_in "Last name", with: 'Smith'
   fill_in "Email", with: 'user@example.com'
-  fill_in "Cell Number", with: "5085544233"
+  fill_in "Cell number", with: "5085544233"
   fill_in "Password", with: 'password'
-  fill_in "password Confirmation", with: 'password'
+  fill_in "Password confirmation", with: 'password'
   click_button 'Sign Up'
 
   expect(page).to have_content("You're in!")
