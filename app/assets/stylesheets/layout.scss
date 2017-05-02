@@ -1,0 +1,18 @@
+@import "settings";
+
+.flash {
+  background-color: $primary-color;
+  color: $white;
+  font-size: 20px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.top-bar {
+  color: $secondary-color;
+}
+
+.body-background {
+  background-image: url('/assets/gay_head.jpg');
+  background-size: cover;
+}

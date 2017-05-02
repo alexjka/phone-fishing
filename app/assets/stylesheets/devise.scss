@@ -1,0 +1,19 @@
+@import "settings";
+
+.devise-new {
+  border-style: inset;
+  margin-top: 2em;
+  padding: 2em;
+  background: $medium-gray;
+}
+
+#error_explanation{
+
+  h2 {
+    font-family: $secondary-font-family;
+    font-size: 1.3rem;
+  }
+  ul {
+      list-style: none;
+    }
+}

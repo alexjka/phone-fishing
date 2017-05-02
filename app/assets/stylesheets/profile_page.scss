@@ -1,0 +1,16 @@
+@import "settings";
+
+.head {
+  margin: 2em;
+  margin-bottom: 2em;
+
+}
+
+.stats {
+  background-color: $black;
+  border-color: $white;
+  border-style: groove;
+  border-radius: 5px;
+  padding: 1em;
+
+}
