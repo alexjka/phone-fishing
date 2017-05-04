@@ -8,14 +8,14 @@ class SpotsController < ApplicationController
   end
 
   def show
-    @spot = Release.find(params[:id])
-    @reports = @spot.reports
-    @report = Review.new
+    @spot = Spot.find(params[:id])
+    # @spot.reports = @reports
+    # @report = Review.new
   end
-
+ 
   def create
     @spot = Spot.new(spot_params)
-    if @release.save
+    if @spot.save
       flash[:notice] = "New Spot has been saved successfully."
       redirect_to spot_path(@spot)
     end

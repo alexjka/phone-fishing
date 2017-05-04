@@ -1,6 +1,6 @@
 # Phone Fishing
 
-One Paragraph of project description goes here
+Imagine you've been working for 10 days straight and each of those days were 10 hour shifts.  You've barely had time to look at the water, never mind knowing where the fish are going to be.  Do you want to spend your entire day off burning fuel from spot to spot or do you want a little bit of a tip?  Sure time is money, but so is fuel - so don't waste the time, or the fuel and just catch fish.  With Phone Fishing, just pick up your phone, sign in, and see what kind of fishing reports are recent in your area.  Do yourself a favor - spend your free time wisely. (with phone fishing).
 
 ## Getting Started
 
