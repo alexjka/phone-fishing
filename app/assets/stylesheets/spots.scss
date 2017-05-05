@@ -1,0 +1,63 @@
+@import "settings";
+
+
+.spot-form {
+  background-color: $white;
+  border-radius: 10px;
+  color: $black;
+  padding: 2em;
+  margin-top: 2em;
+
+  label {
+    color: $black;
+  }
+}
+
+.spot-label {
+  a, p {
+    display: inline-block;
+  }
+}
+
+.spot-header {
+  color: $white;
+  font-weight: bold;
+  padding: 2em;
+  text-align: center;
+}
+
+#error_explanation {
+  font-family: $secondary-font-family;
+  font-size: 20px;
+  text-align: center;
+}
+
+.spot-tile {
+  text-align: center;
+  // border-style: inset;
+  border-radius: 10px;
+  margin-top: 2em;
+  padding: 2em;
+  background: $medium-gray;
+
+}
+
+.add-a-spot {
+  font-family: $secondary-font-family;
+  font-size: 30px;
+  border-radius: 10px;
+  margin-top: .1em;
+  padding: .1em;
+  background: #16ce69;
+  text-align: center
+
+}
+
+.heading {
+  margin-bottom: 2em;
+}
+
+
+.welcome {
+  margin: 3rem;
+}

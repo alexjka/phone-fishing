@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   resources :spots, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     resources :reports
   end
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
       resources :spots
     end
   end
-  resources :users
+  # resources :users
 
   root 'spots#index'
 end

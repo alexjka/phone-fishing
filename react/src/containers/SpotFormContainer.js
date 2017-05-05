@@ -4,26 +4,52 @@ import CoordinateField from '../components/CoordinateField';
 import DescriptionField from '../components/DescriptionField';
 
 class SpotFormContainer extends React.Component {
-  constructor(props){
+  constructor (props) {
     super(props)
     this.state = {
-      spotName: '',
-      spotDescription: '',
-      spotCoordinate: ''
-
+      spotName: "",
+      spotDescription: "",
+      spotCoordinate: "",
+      spots: []
     }
     this.handleNameFieldChange = this.handleNameFieldChange.bind(this);
     this.handleCoordinateFieldChange = this.handleCoordinateFieldChange.bind(this);
     this.handleDescriptionFieldChange = this.handleDescriptionFieldChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleFormClear = this.handleFormClear.bind(this);
+    this.addNewSpot = this.addNewSpot.bind(this)
   }
+
+  componentDidMount(){
+    fetch(`/api/v1/spots`, {
+      credentials: 'same-origin',
+      method: 'GET'
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ spots: response })
+      })
+  }
+
+  addNewSpot(spotPayload){
+    fetch(`/api/v1/spots`, {
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: {  'Accept': 'application/json', 'Content-type': 'application/json' },
+      body: JSON.stringify(spotPayload)
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ spots: [...this.state.spots, response] })
+      })
+  }
+
 
   handleNameFieldChange(event) {
   this.setState({ spotName: event.target.value });
   }
 
-  handleCooridateFieldChange(event) {
+  handleCoordinateFieldChange(event) {
   this.setState({ spotCoordinate: event.target.value });
   }
 
@@ -34,26 +60,26 @@ class SpotFormContainer extends React.Component {
   handleFormSubmit(event){
     event.preventDefault();
     let formPayload = {
-      id: this.props.nextId,
+      // id: this.state.spotnextId,
       name: this.state.spotName,
       coordinate: this.state.spotCoordinate,
-      description: this.state.spotDescription,
+      description: this.state.spotDescription
     }
     console.log(formPayload)
-    this.props.addNewRelease(formPayload)
+    this.addNewSpot(formPayload)
     this.setState({
-      spotName: '',
-      spotCoordinate: '',
-      spotDescription: ''
+      spotName: "",
+      spotCoordinate: "",
+      spotDescription: ""
     });
   }
 
   handleFormClear(event){
     event.preventDefault();
     this.setState({
-      spotName: '',
-      spotCoordinate: '',
-      spotDescription: ''
+      spotName: "",
+      spotCoordinate: "",
+      spotDescription: ""
     });
   }
   render(){
@@ -72,7 +98,7 @@ class SpotFormContainer extends React.Component {
           handleChange={this.handleCoordinateFieldChange}
         />
         <DescriptionField
-          content={this.state.releaseDescription}
+          content={this.state.spotDescription}
           label="Spot Description"
           name="spot-description"
           handleChange={this.handleDescriptionFieldChange}
