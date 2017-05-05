@@ -55,11 +55,6 @@ class SpotIndexContainer extends React.Component {
           {renderSpots}
         </div>
       </div>
-
-
-      <div>
-      This is Index
-      </div>
       </div>
     )
   }

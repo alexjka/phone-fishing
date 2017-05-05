@@ -3,11 +3,14 @@ import React from 'react';
 export default class Spot extends React.Component {
   render () {
     return(
-      <div>
-        <p>{this.props.id}</p>
-        <p>{this.props.name}</p>
-        <p>{this.props.description}</p>
-        <p>{this.props.coordinate}</p>
+      <div class='row'>
+        <div class="small-12 large-6 small-centered">
+          <div className="column column-block spot-tile">
+            <a href={'/spots/'+ this.props.id}>
+              <h3>{this.props.name}</h3>
+            </a>
+          </div>
+        </div>
       </div>
     )
   }

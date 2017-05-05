@@ -84,8 +84,6 @@ class SpotFormContainer extends React.Component {
   }
   render(){
     return(
-
-
       <form className="new-spot-form callout" onSubmit={this.handleFormSubmit}>
         <NameField
           content={this.state.spotName}
@@ -110,8 +108,6 @@ class SpotFormContainer extends React.Component {
           <input className="button" type="submit" value="Submit" />
         </div>
       </form>
-
-
     )
   }
 }
