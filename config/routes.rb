@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :spots, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     resources :reports
   end
+  # root 'spots#index'
 
   resources :users, only: [:index, :show, :destroy]
 
@@ -12,7 +13,9 @@ Rails.application.routes.draw do
       resources :spots
     end
   end
-  # resources :users
 
-  root 'spots#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+
 end

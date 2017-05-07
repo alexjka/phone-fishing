@@ -16,24 +16,10 @@
 <br>
 <br>
 
+
+
 <div class="row">
   <p>
     <%= link_to 'Add a Report', new_spot_report_path(@spot) %>
   </p>
-  <% @reports.each do |report| %>
-  <div class="report">
-    <ul class="no-bullet">
-      <li>
-        Author: <%= reportuser.username %>
-        <br />
-        Report: <%=report.body%>
-        <br />
-        <% end %>
-      </li>
-    </ul>
-    <div class="row">
-
-    </div>
-      <%= link_to 'Add Comment', new_review_comment_path(review) %>
-  </div>
 </div>
