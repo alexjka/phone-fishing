@@ -10,9 +10,9 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     # @spot.reports = @reports
-    # @report = Review.new
+    @report = Report.new
   end
- 
+
   def create
     @spot = Spot.new(spot_params)
     if @spot.save

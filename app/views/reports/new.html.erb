@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="small-12 large-6 small-centered">
+    <!-- <div class="devise-new"> -->
+
+      <div class="row">
+        <h1 class="index_header">How did your time at <%= @spot.name %> go?</h1>
+        <ul style="list-style: none">
+        </ul>
+      </div>
+
+      <div id="app">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="spot-form">
+    <%= form_for [ @spot, @report ] do |f| %>
+
+      <div class="field">
+        <%= f.label :body %><br />
+        <%= f.text_field :body %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Add"%>
+      </div>
+    <% end %>
+    <p>
+    <%= link_to 'Home', root_path %>
+    </p>
+  </div>
+</div>
