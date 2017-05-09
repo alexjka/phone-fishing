@@ -28,8 +28,9 @@ class Api::V1::SpotsController < ApplicationController
     params.require(:spot).permit(
       :id,
       :name,
-      :coordinates,
-      :description
+      :lat,
+      :long,
+      :description,
     )
   end
 end

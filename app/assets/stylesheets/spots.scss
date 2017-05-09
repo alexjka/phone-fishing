@@ -1,6 +1,5 @@
 @import "settings";
 
-
 .spot-form {
   background-color: $white;
   border-radius: 10px;
@@ -46,11 +45,14 @@
   font-family: $secondary-font-family;
   font-size: 30px;
   border-radius: 10px;
-  margin-top: .1em;
   padding: .1em;
   background: #16ce69;
-  text-align: center
-
+  color: #0a0a0a;
+  margin: 0;
+  text-align: center;
+}
+.add-a-spot a {
+  color: $black;
 }
 
 .heading {
@@ -60,4 +62,9 @@
 
 .welcome {
   margin: 3rem;
+}
+
+#checkbox{
+  width: 25px;
+  height: 25px;
 }

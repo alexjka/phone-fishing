@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    # @spot.reports = @reports
+    @reports = @spot.reports
     @report = Report.new
   end
 
@@ -38,7 +38,8 @@ class SpotsController < ApplicationController
     params.require(:spot).permit(
       :name,
       :description,
-      :coordinates,
+      :lat,
+      :long,
     )
   end
 end

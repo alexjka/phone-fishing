@@ -1,6 +1,7 @@
 import React from 'react';
 import NameField from '../components/NameField';
-import CoordinateField from '../components/CoordinateField';
+import LatField from '../components/LatField';
+import LongField from '../components/LongField';
 import DescriptionField from '../components/DescriptionField';
 
 class SpotFormContainer extends React.Component {
@@ -9,11 +10,13 @@ class SpotFormContainer extends React.Component {
     this.state = {
       spotName: "",
       spotDescription: "",
-      spotCoordinate: "",
+      spotLat: "",
+      spotLong: "",
       spots: []
     }
     this.handleNameFieldChange = this.handleNameFieldChange.bind(this);
-    this.handleCoordinateFieldChange = this.handleCoordinateFieldChange.bind(this);
+    this.handleLatFieldChange = this.handleLatFieldChange.bind(this);
+    this.handleLongFieldChange = this.handleLongFieldChange.bind(this);
     this.handleDescriptionFieldChange = this.handleDescriptionFieldChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleFormClear = this.handleFormClear.bind(this);
@@ -49,8 +52,12 @@ class SpotFormContainer extends React.Component {
   this.setState({ spotName: event.target.value });
   }
 
-  handleCoordinateFieldChange(event) {
-  this.setState({ spotCoordinate: event.target.value });
+  handleLatFieldChange(event) {
+  this.setState({ spotLat: event.target.value });
+  }
+
+  handleLongFieldChange(event) {
+  this.setState({ spotLong: event.target.value });
   }
 
   handleDescriptionFieldChange(event) {
@@ -62,14 +69,16 @@ class SpotFormContainer extends React.Component {
     let formPayload = {
       // id: this.state.spotnextId,
       name: this.state.spotName,
-      coordinate: this.state.spotCoordinate,
+      lat: this.state.spotLat,
+      long: this.state.spotLong,
       description: this.state.spotDescription
     }
     console.log(formPayload)
     this.addNewSpot(formPayload)
     this.setState({
       spotName: "",
-      spotCoordinate: "",
+      spotLat: "",
+      spotLong: "",
       spotDescription: ""
     });
   }
@@ -78,7 +87,8 @@ class SpotFormContainer extends React.Component {
     event.preventDefault();
     this.setState({
       spotName: "",
-      spotCoordinate: "",
+      spotLat: "",
+      spotLong: "",
       spotDescription: ""
     });
   }
@@ -91,11 +101,17 @@ class SpotFormContainer extends React.Component {
           name="spot-name"
           handleChange={this.handleNameFieldChange}
         />
-        <CoordinateField
-          content={this.state.spotCoordinate}
-          label="Spot Coordinate"
-          name="spot-coordinate"
-          handleChange={this.handleCoordinateFieldChange}
+        <LatField
+          content={this.state.spotLat}
+          label="Spot Latitude"
+          name="spot-lat"
+          handleChange={this.handleLatFieldChange}
+        />
+        <LongField
+          content={this.state.spotLong}
+          label="Spot Longitude"
+          name="spot-long"
+          handleChange={this.handleLongFieldChange}
         />
         <DescriptionField
           content={this.state.spotDescription}

@@ -1,14 +1,15 @@
 <div class="row">
   <div class="small-centered head">
-    <h1> profile </h1>
+    <div style="text-align: center">
+      <h1> <%= @user.username %>'s profile </h1>
+    </div>
   </div>
 </div>
 
 <div class="row">
-
-<div class="column small-12 large-4 avatar">
-<div class="row">
-<%= link_to "Edit my profile", edit_user_registration_path %>
-
-</div>
+  <div class="small-12 large-6 small-centered">
+    <div class="add-a-spot">
+      <%= link_to "Edit or delete my profile", edit_user_registration_path %>
+    </div>
+  </div>
 </div>

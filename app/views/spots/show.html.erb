@@ -1,25 +1,49 @@
 
-<div class="row small-centered">
-  <h1> <%=@spot.name %> </h1>
+<div class="row">
 </div>
 
-<div class="row">
-  <div class="column small-12 large-6">
+<div class='row'>
+  <div class="small-12 large-6 small-centered">
+    <div class="column column-block spot-tile">
+      <div style="text-align: center">
+        <h1> <%=@spot.name %> </h1>
+      </div>
+      <h4> Description: </h4>
+      <p><%= @spot.description %></p>
+      <h5> Latitude: </h5>
+      <p><%= @spot.lat  %></p>
+      <h5> Longitude: </h5>
+      <p><%= @spot.long  %></p>
+      <form>
+        <input type="checkbox" id="checkbox" name="favorite" value="favorite"> Text me updates<br>
+      </form>
+    </div>
   </div>
-  <div>
-    <h4> Description: </h4>
-    <p><%= @spot.description %></p>
+</div>
+<div class="small-12 large-6 small-centered">
+  <div class="add-a-spot">
+    <p>
+      <%= link_to 'Add a Report', new_spot_report_path(@spot) %>
+    </p>
   </div>
 </div>
 
 <br>
-<br>
-<br>
-
-
-
 <div class="row">
-  <p>
-    <%= link_to 'Add a Report', new_spot_report_path(@spot) %>
-  </p>
+  <div class="report">
+    <% @reports.each do |report| %>
+      <div class="small-12 large-6 small-centered">
+        <div class="column column-block spot-tile">
+          <div style="text-align: center">
+            <ul class="no-bullet">
+              <li>
+                <h3><%= time_ago_in_words(report.created_at) %> ago </h3>
+                <h2><%=report.body%></h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
