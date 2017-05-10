@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CoordinateField = (props) => {
+const LongField = (props) => {
   return (
     <label>{props.label}
       <input
@@ -14,4 +14,4 @@ const CoordinateField = (props) => {
   );
 }
 
-export default CoordinateField;
+export default LongField;

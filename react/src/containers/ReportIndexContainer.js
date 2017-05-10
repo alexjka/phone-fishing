@@ -25,17 +25,6 @@ class ReportIndexContainer extends React.Component {
   }
 
 
-  // addNewSpot(spotPayload){
-  //   fetch(`/api/v1/spots`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(spotPayload)
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       this.setState({ spots: [...this.state.spots, response] })
-  //     })
-  // }
-
   render(){
     let renderSpots = this.state.spots.map(spot => {
       return(
@@ -44,7 +33,8 @@ class ReportIndexContainer extends React.Component {
           id={spot.id}
           name={spot.name}
           description={spot.description}
-          coordinate={spot.coordinate}
+          lat={spot.lat}
+          long={spot.long}
         />
       )
     })

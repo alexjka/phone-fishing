@@ -1,5 +1,6 @@
 source 'https://rubygems.org/'
 
+gem 'twilio-ruby'
 gem 'foundation-rails'
 gem 'devise'
 gem 'rails', '~> 5.0.0'
@@ -15,6 +16,8 @@ group :development do
 end
 
 group :development, :test do
+  gem 'dotenv'
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'launchy', require: true
