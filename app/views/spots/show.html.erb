@@ -22,16 +22,14 @@
 </div>
 <div class="small-12 large-6 small-centered">
   <div class="add-a-spot">
-    <p>
-      <%= link_to 'Add a Report', new_spot_report_path(@spot) %>
-    </p>
+    <%= link_to 'Add a Report', new_spot_report_path(@spot) %>
   </div>
 </div>
 
 <br>
 <div class="row">
   <div class="report">
-    <% @reports.each do |report| %>
+    <% @reports.reverse.each do |report| %>
       <div class="small-12 large-6 small-centered">
         <div class="column column-block spot-tile">
           <div style="text-align: center">
