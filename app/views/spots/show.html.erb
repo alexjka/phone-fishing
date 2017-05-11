@@ -15,8 +15,12 @@
       <h5> Longitude: </h5>
       <p><%= @spot.long  %></p>
       <form>
-        <input type="checkbox" id="checkbox" name="favorite" value="favorite"> Text me updates<br>
+        <%= form_for :post do |f| %>
+        <!-- <input type="checkbox" id="checkbox" name="favorite" value="favorite"> Text me updates<br> -->
+        <%= f.check_box :favorite %>Text me updates<br>
+        <% end %>
       </form>
+
     </div>
   </div>
 </div>
