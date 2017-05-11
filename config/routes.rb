@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :apps do
+    post '/texting/send_text' => 'texting#send_text'
+  end
+
   devise_scope :user do
     root to: "devise/sessions#new"
   end
