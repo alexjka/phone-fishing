@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :spots, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     resources :reports
+    end
+
+  resources :spots do
+    resources :favorites
   end
+
 
   resources :users, only: [:index, :show, :destroy]
 
