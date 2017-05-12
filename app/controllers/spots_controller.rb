@@ -11,9 +11,11 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @reports = @spot.reports
     @report = Report.new
+    @favorite = Favorite.new
   end
 
   def create
+    binding.pry
     @spot = Spot.new(spot_params)
     if @spot.save
       flash[:notice] = "New Spot has been saved successfully."
@@ -30,6 +32,13 @@ class SpotsController < ApplicationController
     destroy_spot(spot)
     flash[:notice] = "This spot has been deleted - this secret will go with you to your grave"
     redirect_to root_path
+  end
+
+  def update
+    binding.pry
+    if params.includes(favorite?)
+      current_user.favorites.favorite? == true
+    end
   end
 
   private
