@@ -15,19 +15,19 @@ class ReportsController < ApplicationController
     @report.user = current_user
     all_user = User.all
 
-    users_with_favorite = []
-    all_user.each do |user|
-      if user.spots
-        if user.favorites.checked? == true
-          users_with_favorite << user
-        end
-      end
-    end
+    users_with_favorite = @spot.users
+    # all_user.each do |user|
+    #   if user.spots
+    #     if user.favorites.checked? == true
+    #       users_with_favorite << user
+    #     end
+    #   end
+    # end
     if @report.save!
       flash[:notice] = "Thanks for adding a fishing report!"
 
       users_with_favorite.each do |s|
-        s.cell_number.send_sms
+        s.send_sms(@spot)
       end
 
       # acct_sid = ENV['TWILIO_ACCOUNT_SID']

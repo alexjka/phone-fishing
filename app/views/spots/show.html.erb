@@ -14,13 +14,10 @@
       <p><%= @spot.lat  %></p>
       <h5> Longitude: </h5>
       <p><%= @spot.long  %></p>
-      <form>
-        <!-- <%= form_for @spot, method: :create do |f| %> -->
-        <!-- <input type="checkbox" id="checkbox" name="favorite" value="favorite"> Text me updates<br> -->
-        <%= check_box :favorite, checked %>Check the box
-        <%= submit "and click me"%> to get text updates
+      <form action=<%="/spots/#{@spot.id}/favorites"%> method="post">
+        <input type="checkbox" id="checkbox" name="favorite" value="favorite"> Text me updates<br>
         <br>
-        <% end %>
+        <input type="submit">
       </form>
 
     </div>
