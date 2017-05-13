@@ -2,75 +2,62 @@
 
 Imagine you've been working for 10 days straight and each of those days were 10 hour shifts.  You've barely had time to look at the water, never mind knowing where the fish are going to be.  Do you want to spend your entire day off burning fuel from spot to spot or do you want a little bit of a tip?  Sure time is money, but so is fuel - so don't waste the time, or the fuel and just catch fish.  With Phone Fishing, just pick up your phone, sign in, and see what kind of fishing reports are recent in your area.  Do yourself a favor - spend your free time wisely. (with phone fishing).
 
-## Getting Started
+## Check my App out on Heroku
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+* [Phone Fishing](https://phone-fishing.herokuapp.com/)
 
-### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+### Running locally
+To run the application, please just clone the repo and run it like so:
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+git clone https://github.com/alexjka/phone-fishing.git
+cd phone-fishing
+bundle install
+npm install
+then run in the console
+$npm start
+$rails s
 
 ```
-Give an example
-```
 
-### And coding style tests
+#### Current features
+* Signup and Sign in
+* Show User profile where you can edit or delete profile
+* Add and List fishing spots
+* Add and List fishing reports
+* Recieve SMS text when new reports are added to a fishing spot you "liked"
 
-Explain what these tests test and why
+### TODOs
+* Intergreat Google Maps API for mapping and geocoding fishing spots
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* Ruby version 2.3.3
+* [Devise](https://github.com/plataformatec/devise) - Used to authenticate users
+* [React.js](https://facebook.github.io/react/) - Used to build a beautiful user
+interface
+* [Foundation-Rails](https://github.com/zurb/foundation-rails) - Used to add
+Foundation to our Rails project
+* [Twilio-ruby](https://github.com/twilio/twilio-ruby) - Used for sending sms
+text messages
+
+
+## License
+
+This project is open source.
+If you think you can improve on it, please do.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read
+[CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426)
+for details on our code of conduct, and the process for submitting pull
+requests to us.
 
-## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
+## Author
 
 * **Alexander J. Kalife**
 
@@ -80,9 +67,7 @@ This project is open for you to try to make it better!
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* All the friendly folks at Launch Academy that helped me along the way
 
 ![Build Status](https://codeship.com/projects/3981ad90-0f13-0135-185a-5e5ebf8267fc/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/alexjka/phone-fishing.png)
