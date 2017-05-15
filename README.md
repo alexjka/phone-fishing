@@ -71,3 +71,4 @@ This project is open for you to try to make it better!
 
 ![Build Status](https://codeship.com/projects/3981ad90-0f13-0135-185a-5e5ebf8267fc/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/alexjka/phone-fishing.png)
+![Coverage Status](https://coveralls.io/repos/alexjka/phone-fishing/badge.png)

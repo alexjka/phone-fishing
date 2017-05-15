@@ -12,27 +12,46 @@ feature "user signs in" , %Q{
   # When I enter invalid information I should receive an error message and not
   # be signed in
   # When I've signed in I should be able to access authenticated user actions
+scenario "user tries to sign up" do
+  visit root_path
+  click_link "Sign Up"
+  expect(page).to have_content "Boat name or username"
+  expect(page).to have_content "Email"
+  expect(page).to have_content "Cell number"
+  expect(page).to have_content "Password (6 characters minimum)"
+  expect(page).to have_content "Password confirmation"
+end
+
+
 scenario "specifiying valid and required information" do
   visit root_path
   click_link "Sign Up"
-  fill_in "First name", with: 'Joe'
-  fill_in "Last name", with: 'Smith'
+  fill_in "user_username", with: 'Cold Sweat'
   fill_in "Email", with: 'user@example.com'
   fill_in "Cell number", with: "5085544233"
   fill_in "Password", with: 'password'
   fill_in "Password confirmation", with: 'password'
-  click_button 'Sign Up'
+  find('input[type="submit"]').click
 
-  expect(page).to have_content("You're in!")
+  expect(page).to have_content("Fishing Spots")
   expect(page).to have_content("Sign Out")
 end
 
 
-scenario "required information is not supplied" do
-
+scenario "if sign up form is incomplete, I should see errors" do
+  visit root_path
+  click_link "Sign Up"
+  find('input[type="submit"]').click
+  expect(page).to have_content "Username can't be blank"
+  expect(page).to have_content "Email can't be blank"
+  expect(page).to have_content "Password can't be blank"
 end
 
-scenario "password confirmation does not match confirmation" do
-
+scenario "if user is not signed in, should not see log out" do
+  visit root_path
+  click_link "Sign Up"
+  expect(page).to have_content "Sign Up"
+  expect(page).not_to have_content "Log Out"
 end
+
 end
