@@ -1,11 +1,10 @@
 require 'spec_helper'
 
 describe User do
-  it { should have_valid(:first_name).when('Joe', 'Sally') }
-  it { should_not have_valid(:first_name).when(nil,'') }
+  it { should have_valid(:username).when('Joe', 'Sally') }
+  it { should_not have_valid(:username).when(nil,'') }
 
-  it { should have_valid(:last_name).when('Smith', 'Swanson') }
-  it { should_not have_valid(:last_name).when(nil, '') }
+  it { should have_valid(:cell_number).when('5082643000', '5085421999') }
 
   it { should have_valid(:email).when('user@example.com', 'another@gmail.com') }
   it { should_not have_valid(:email).when(nil, '', 'user', 'usrba.com') }
