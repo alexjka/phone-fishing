@@ -1,7 +1,6 @@
 var config = {
-context: _dirname + '/app',
   entry: {
-    main: './app/react/src/main.js',
+    path: './react/src/main.js',
   },
   output: {
     path: './app/assets/javascripts',
