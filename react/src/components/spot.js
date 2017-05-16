@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Spot extends React.Component {
+class Spot extends Component {
+  constructor(props) {
+    super(props)
+  }
   render () {
     return(
       <div className='row'>
@@ -15,3 +18,4 @@ export default class Spot extends React.Component {
     )
   }
 }
+export default Spot;
