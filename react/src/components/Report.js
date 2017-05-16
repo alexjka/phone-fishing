@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default class Report extends React.Component {
+class Report extends Component {
+  constructor(props) {
+    super(props)
+  }
   render () {
     return(
       <div class='row'>
@@ -13,3 +16,5 @@ export default class Report extends React.Component {
     )
   }
 }
+
+export default Report;
