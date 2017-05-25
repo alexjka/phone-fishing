@@ -1,11 +1,11 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Project from './Project';
 
 $(function() {
   ReactDOM.render(
-    <App />,
+    <Project />,
     document.getElementById('app')
   );
 });

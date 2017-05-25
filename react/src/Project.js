@@ -4,7 +4,7 @@ import { Route, IndexRoute, Router, browserHistory } from 'react-router';
 import SpotIndexContainer from './containers/SpotIndexContainer';
 import SpotFormContainer from './containers/SpotFormContainer';
 
-const App = (props) => {
+const Project = (props) => {
   return(
   <Router history={browserHistory}>
     <Route path="/spots" component={SpotIndexContainer} />
@@ -13,4 +13,4 @@ const App = (props) => {
   )
 }
 
-export default App;
+export default Project;
